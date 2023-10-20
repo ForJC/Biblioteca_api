@@ -23,16 +23,16 @@ INSERT INTO libros (Autor_id,Titulo,Cantidad_disponible,genero) VALUES
 ('4','El licenciado Vidriera',7,'Novela');
 
 INSERT INTO usuarios (Nombre,Direccion,Telefono,Correo_electronico) VALUES 
-('Pedro','calle Morelos',7281434601,'sovah96917@ibtrades.com'),
-('Alma','calle Nigromante',7281434602,'yetrayisto@gufum.com'),
-('Eduardo','calle Sierra',7281434603,'scralloisepruquau-6795@yopmail.com'),
-('Victor','calle Allende',7281434604,'remmabuguddu-5210@yopmail.com'),
-('Ethan','calle Centro',7281434605,'wobrequommefeu-1064@yopmail.com'),
-('Luis','calle Madero',7281434606,'quaxefinireu-5344@yopmail.com'),
-('Ana','calle La Cruz',7281434607,'wahettirauji-3562@yopmail.com'),
-('Marycruz','calle Colonia',7281434608,'wappeweijobrou-7666@yopmail.com'),
-('Gabriela','calle Reforma',7281434609,'sovah96924@ibtrades.com'),
-('Fernanda','calle Morelos',7281434610,'cukuhaulaque-8195@yopmail.com');
+('Pedro','calle Morelos',728143,'sovah96917@ibtrades.com'),
+('Alma','calle Nigromante',728143,'yetrayisto@gufum.com'),
+('Eduardo','calle Sierra',728143,'scralloisepruquau-6795@yopmail.com'),
+('Victor','calle Allende',728143,'remmabuguddu-5210@yopmail.com'),
+('Ethan','calle Centro',728143,'wobrequommefeu-1064@yopmail.com'),
+('Luis','calle Madero',728143,'quaxefinireu-5344@yopmail.com'),
+('Ana','calle La Cruz',72814,'wahettirauji-3562@yopmail.com'),
+('Marycruz','calle Colonia',728143,'wappeweijobrou-7666@yopmail.com'),
+('Gabriela','calle Reforma',728143,'sovah96924@ibtrades.com'),
+('Fernanda','calle Morelos',728143,'cukuhaulaque-8195@yopmail.com');
 
 INSERT INTO prestamos (Usuario_id,ISBN,Fecha_devolucion) VALUES 
 (1, 6, '2023-10-23 00:00:00'),
