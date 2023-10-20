@@ -88,7 +88,7 @@ export const getLibrosAutor = async(req,res)=>{
             const AutorId = autor[0].Autor_id
             const [rows] = await pool.query(`SELECT ISBN, Titulo, genero FROM libros,Autores WHERE autores.Autor_id = ? `,[AutorId])
             if(rows.length>0){
-                res.json(rows)
+                res.status(200).json(rows)
             }else{
                 res.status(400).json({
                     message:`No se encontraron libros con este Autor ${Autor}`   
