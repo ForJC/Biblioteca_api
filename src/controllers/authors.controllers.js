@@ -50,9 +50,15 @@ export const getAuthor=async(req,res)=>{
 export const deleteAuthors = async(req,res)=>{
   try {
     const [data]= await pool.query(`DELETE FROM autores WHERE Autor_id=?`,[req.params.id])
-    if(data.affectedRows <= 0)return res.status(400).json({
-      meensage:"Autor no encontrado!"
-    })
+    if(data.affectedRows <= 0){
+      return res.status(400).json({
+        meensage:"Autor no encontrado!"
+      })
+    } else{ 
+        res.status(200).json({
+          meensage:"Autor eliminado correctamente"
+         })
+    }
     res.sendStatus(204)
   } catch (error) {
     return res.status(500).json({
