@@ -1,0 +1,47 @@
+INSERT INTO autores(Nombre, Nacionalidad,Fecha_nacimiento) VALUES 
+('Edgar Allan Poe','EEUU','1809-09-3'),
+('Jane Austen','EEUU','1809-09-3'),
+('Edgar Allan Poe','Reino Unido','1775-10-23'),
+('Miguel de Cervantes','Alcalá de Henares','1547-06-26'),
+('Agatha Chistiee','Agatha Chistie','1890-09-13'),
+('Paulo Coelhoe','Río de Janeiro','1948-05-29'),
+('Charles Dickens','Reino Unido','1812-10-06'),
+('Ken Follet','Reino Unido','1949-01-24'),
+('Federico García Lorca','Granada','1898-03-15'),
+('Gabriel García Márquez','Colombia','1927-12-12');
+
+INSERT INTO libros (Autor_id,Titulo,Cantidad_disponible,genero) VALUES 
+('1','Greatest Works',3,'Terror'),
+('1','The Ultimate Collection',2,'Terror'),
+('2','Pride and Prejudice',2,'Terror'),
+('4','Don Quijote de la Mancha',5,'Novela'),
+('4','La Galatea',4,'Novela'),
+('4','Los trabajos de Persiles y Sigismunda',2,'Novela'),
+('4','Rinconete y Cortadillo',6,'Novela'),
+('4','El coloquio de los perros',3,'Novela'),
+('4','Viaje del Parnaso',6,'Novela'),
+('4','El licenciado Vidriera',7,'Novela');
+
+INSERT INTO usuarios (Nombre,Direccion,Telefono,Correo_electronico) VALUES 
+('Pedro','calle Morelos',7281434601,'sovah96917@ibtrades.com'),
+('Alma','calle Nigromante',7281434602,'yetrayisto@gufum.com'),
+('Eduardo','calle Sierra',7281434603,'scralloisepruquau-6795@yopmail.com'),
+('Victor','calle Allende',7281434604,'remmabuguddu-5210@yopmail.com'),
+('Ethan','calle Centro',7281434605,'wobrequommefeu-1064@yopmail.com'),
+('Luis','calle Madero',7281434606,'quaxefinireu-5344@yopmail.com'),
+('Ana','calle La Cruz',7281434607,'wahettirauji-3562@yopmail.com'),
+('Marycruz','calle Colonia',7281434608,'wappeweijobrou-7666@yopmail.com'),
+('Gabriela','calle Reforma',7281434609,'sovah96924@ibtrades.com'),
+('Fernanda','calle Morelos',7281434610,'cukuhaulaque-8195@yopmail.com');
+
+INSERT INTO prestamos (Usuario_id,ISBN,Fecha_devolucion) VALUES 
+(1, 6, '2023-10-23 00:00:00'),
+(5, 8, '2023-10-19 00:00:00'),
+(1 , 2, '2023-10-12 00:00:00'),
+(2, 2, '2023-10-02 00:00:00'),
+(6 , 5, '2023-10-19 00:00:00'),
+(4, 11, '2023-10-26 00:00:00'),
+(4, 11, '2023-10-14 00:00:00'),
+(5, 10, '2023-10-17 00:00:00'),
+(5, 11, '2023-10-05 00:00:00'),
+(5, 3, '2023-10-01 00:00:00');
