@@ -1,6 +1,6 @@
-import { addUsuarios, deleteUsuarios, getUsuario, getUsuarios, patchUsuarios } from '../controllers/usuarios.controllers.js';
+import { addUsuarios, deleteUsuarios, getUsuario, getUsuarios, patchUsuarios } from '../controllers/usuarios.controllers.js'
 import { Router } from 'express';
-const router = Router();
+const router=Router();
 
 router.get('/usuarios',getUsuarios)
 router.get('/usuarios/:id',getUsuario)
