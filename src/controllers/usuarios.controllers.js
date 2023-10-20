@@ -22,10 +22,12 @@ export const addUsuarios = async (req,res) => {
 export const getUsuarios = async (req,res) => {
   try {
     const [rows] = await pool.query(`SELECT *FROM usuarios`)
-    res.json(rows)
+    if(rows.length>0){
+      res.json(rows)
+    }
   } catch (error) {
     res.status(500).json({
-      message: 'Algo anda mal... por favor de verificar!'
+        message: "Algo salio mal no pudimos conectar a la base de datos"
     })
   }
 }
