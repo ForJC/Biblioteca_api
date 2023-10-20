@@ -58,6 +58,7 @@ export const deleteLibros =async(req,res)=>{
     
 }
 
+  
 export const patchLibros = async(req,res)=>{
     try {
         const {AutorId,Titulo,CantidadDisponible, genero} = req.body
@@ -80,18 +81,23 @@ export const patchLibros = async(req,res)=>{
 }
 
 export const getLibrosAutor = async(req,res)=>{
-    const {Autor}= req.body
-    const [autor] = await pool.query(`SELECT Autor_id FROM autores WHERE Nombre = ?`, [Autor])
-    if(autor.length>0){
-        const AutorId = autor[0].Autor_id
-        const [rows] = await pool.query(`SELECT *FROM libros,Autores WHERE Autores.Autor_id = ? `,[AutorId])
-        if(rows.length>0){
-            res.status(200).json(rows)
-        }else{
-            res.status(400).json({
-                message:`No se encontraron libros con este Autor ${Autor}`   
-            })
+    try {
+        const {Autor}= req.body
+        const [autor] = await pool.query(`SELECT Autor_id FROM autores WHERE Nombre = ?`, [Autor])
+        if(autor.length>0){
+            const AutorId = autor[0].Autor_id
+            const [rows] = await pool.query(`SELECT ISBN, Titulo, genero FROM libros,Autores WHERE libros.Autor_id = ? `,[AutorId])
+            if(rows.length>0){
+                res.json(rows)
+            }else{
+                res.status(400).json({
+                    message:`No se encontraron libros con este Autor ${Autor}`   
+                })
+            }
         }
+    } catch (error) {
+        res.status(500).json({
+            message: "Algo salio mal no pudimos conectar a la base de datos"
+        })
     }
-    
 }
