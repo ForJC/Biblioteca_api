@@ -38,7 +38,7 @@ export const getAuthors=async(req,res)=>{
 export const getAuthor=async(req,res)=>{
     // res.send("Obteniendo Authors!")
     try {
-      const [rows] = await pool.query(`SELECT *FROM authors where Autor_id = ?`,[req.params.id])
+      const [rows] = await pool.query(`SELECT *FROM autores where Autor_id = ?`,[req.params.id])
       res.json(rows)
     } catch (error) {
       return res.status(500).json({
@@ -64,9 +64,10 @@ export const deleteAuthors = async(req,res)=>{
 
 export const patchAuthors = async(req,res)=>{
   const {id}=req.params//de la url
-  const {nombre, nacionalidad,fecha_nacimiento}=req.body 
+  const {Nombre, Nacionalidad,Fecha_nacimiento}=req.body 
   try {
-    const [result]=await pool.query("UPDATE autores SET Nombre = IFNULL(?,Nombre), Nacionalidad = IFNULL(?,Nacionalidad,),Fecha_nacimiento = IFNULL(?,Fecha_nacimiento ,) WHERE Autor_id=?", [nombre, nacionalidad, fecha_nacimiento, id])
+    const [result]=await pool.query
+    ("UPDATE autores SET Nombre = IFNULL(?,Nombre), Nacionalidad = IFNULL(?,Nacionalidad),Fecha_nacimiento = IFNULL(?,Fecha_nacimiento) WHERE Autor_id=?", [nombre, nacionalidad, fecha_nacimiento, id])
     //ifNULL valida los datos en caso de que no existan valores y solo actualiza los que si existan
     if(result.affectedRows===0)res.status(404).json({
       message:"Author no encontrado"
